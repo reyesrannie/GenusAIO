@@ -8,8 +8,11 @@
 
 .dashboardLinks.error {
   &.MuiBox-root {
-    background-color: #f26823;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -23,6 +26,7 @@
     backdrop-filter: blur(5px);
     border-radius: 1rem;
     transition: background-color 0.01s ease-in-out;
+    max-height: 20rem;
   }
   &:hover {
     background-color: rgb(

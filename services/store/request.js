@@ -64,6 +64,7 @@ export const jsonServerAPI = createApi({
     createLink: builder.mutation({
       transformResponse: (response) => response,
       query: (payload) => ({ url: `/link`, method: "POST", body: payload }),
+      invalidatesTags: ["Links"],
     }),
     updateLink: builder.mutation({
       transformResponse: (response) => response,
@@ -72,6 +73,7 @@ export const jsonServerAPI = createApi({
         method: "PATCH",
         body: payload,
       }),
+      invalidatesTags: ["Links"],
     }),
     archiveLink: builder.mutation({
       transformResponse: (response) => response,

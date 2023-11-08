@@ -47,7 +47,7 @@ const DashboardLinks = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { params, onStatusChange } = useParamsHook();
 
-  const { data: linkData, isFetching, isError } = useLinksQuery(params);
+  const { data: linkData, isFetching, isError, error } = useLinksQuery(params);
 
   const handleClose = () => {
     console.log(openDrawer);
@@ -94,7 +94,7 @@ const DashboardLinks = () => {
   ];
 
   return (
-    <Box className={`dashboardLinks ${isError ? `error` : ""}`}>
+    <Box className={`dashboardLinks `}>
       {isFetching ? (
         options.map((item) => <Loading key={item.label} />)
       ) : isError ? (
@@ -131,7 +131,15 @@ const DashboardLinks = () => {
       {isFetching ? (
         options.map((item) => <Loading key={item.label} />)
       ) : isError ? (
-        <NotFound />
+        params.status === "active" ? (
+          <Box className="addLinks">
+            <IconButton onClick={() => dispatch(setOpenDrawer(true))}>
+              <AddOutlinedIcon className="addButtonIcon" />
+            </IconButton>
+          </Box>
+        ) : (
+          <NotFound status={error?.status} message={error?.data?.message} />
+        )
       ) : (
         location?.pathname !== "/" &&
         params.status === "active" && (
