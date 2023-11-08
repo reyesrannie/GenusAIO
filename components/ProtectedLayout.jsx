@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
   AppBar,
@@ -17,6 +17,7 @@ import "../styles/GlobalStyles.scss";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 import { useNavigate } from "react-router-dom";
 import AppMenu from "./AppMenu";
@@ -24,9 +25,12 @@ import { useLogoutMutation } from "../services/store/request";
 import { useDispatch, useSelector } from "react-redux";
 import { setChangePass } from "../services/slice/authSlice";
 import ChangePassword from "./ChangePassword";
+import MenuDrawer from "./MenuDrawer";
+import { setDrawer } from "../services/slice/menuSlice";
 
 const ProtectedLayout = ({ child }) => {
   const dispatch = useDispatch();
+  const drawer = useSelector((state) => state.menu.drawer);
   const changePass = useSelector((state) => state.auth.changePass);
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
@@ -69,13 +73,25 @@ const ProtectedLayout = ({ child }) => {
   return (
     <Box className="layoutContainer">
       <AppBar className="appBar">
-        <img src={logo} alt="logo" className="appBarLogo" />
+        <Box className="menuBarBox">
+          <IconButton
+            onClick={() =>
+              drawer ? dispatch(setDrawer(false)) : dispatch(setDrawer(true))
+            }
+          >
+            <MenuOutlinedIcon />
+          </IconButton>
+          <Box>
+            <img src={logo} alt="logo" className="appBarLogo" />
+          </Box>
+        </Box>
         <Box>
           <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
             <AccountCircleOutlinedIcon />
           </IconButton>
         </Box>
       </AppBar>
+      <MenuDrawer />
       {child}
       <AppMenu
         anchorEl={anchorEl}

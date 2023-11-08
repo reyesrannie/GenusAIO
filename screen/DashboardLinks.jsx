@@ -50,7 +50,6 @@ const DashboardLinks = () => {
   const { data: linkData, isFetching, isError, error } = useLinksQuery(params);
 
   const handleClose = () => {
-    console.log(openDrawer);
     if (openDrawer) {
       setAnchorEl(null);
     } else {
