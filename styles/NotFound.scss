@@ -1,0 +1,10 @@
+.notFoundBox {
+  &.MuiBox-root {
+    display: flex;
+    background-color: aqua;
+
+    .imgNotFound {
+      width: 1px;
+    }
+  }
+}

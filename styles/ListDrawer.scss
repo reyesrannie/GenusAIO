@@ -1,0 +1,35 @@
+.drawerRight {
+  .MuiPaper-root {
+    width: 400px;
+    display: flex;
+
+    .listEditImage {
+      margin-top: 20px;
+      width: 80px;
+    }
+    .drawerListTitle {
+      &.MuiTypography-root {
+        font-family: "GoldManRegular";
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+    }
+    .listDrawerText {
+      &.MuiFormControl-root {
+        .MuiInputBase-root {
+          border-radius: 10px;
+        }
+      }
+    }
+    .listDrawerForm {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .listDrawerButton {
+      &.MuiButtonBase-root {
+        font-family: "GoldManRegular";
+      }
+    }
+  }
+}

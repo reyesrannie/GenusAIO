@@ -1,0 +1,27 @@
+.appBar {
+  &.MuiAppBar-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+  }
+  .MuiSvgIcon-root {
+    font-size: 1.5rem;
+  }
+}
+
+.appBarLogo {
+  width: 8%;
+  margin: 1%;
+}
+
+.layoutContainer {
+  &.MuiBox-root {
+    margin-top: 4.6%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    justify-content: center;
+  }
+}

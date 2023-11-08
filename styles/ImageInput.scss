@@ -1,0 +1,64 @@
+.withImage {
+  &.MuiBox-root {
+    min-width: 22rem;
+    max-width: 22rem;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .custom-image {
+    max-width: 10rem;
+    min-width: 10rem;
+    transition: filter 0.3s;
+  }
+  .custom-image.blurred {
+    filter: blur(3px);
+  }
+
+  .custom-icon-image {
+    &.MuiSvgIcon-root {
+      font-size: 2.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+  .custom-icon-image.visible {
+    opacity: 1;
+  }
+
+  .addImage {
+    max-width: 10rem;
+  }
+
+  .addImage-button {
+    border-radius: none;
+    border: 1px solid;
+    border-style: dashed;
+  }
+
+  .labelNames {
+    &.MuiTypography-root {
+      font-family: "GoldManRegular";
+      color: rgb(102 102 102);
+    }
+  }
+
+  .labelNames.error {
+    &.MuiTypography-root {
+      color: rgb(211 47 47);
+    }
+  }
+  .errorLabel {
+    &.MuiTypography-root {
+      margin-left: 1rem;
+      font-size: 0.8rem;
+      color: rgb(211 47 47);
+    }
+  }
+}

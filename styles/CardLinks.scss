@@ -1,0 +1,102 @@
+.cardLinks {
+  &.MuiCard-root {
+    max-width: 30rem;
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+    min-height: 20rem;
+    max-height: 20rem;
+    margin: 1rem;
+    background-color: #eee9da;
+
+    .cardDetails {
+      &.MuiBox-root {
+        padding: 0.9rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        .cardContentContainer {
+          &.MuiCardContent-root {
+            flex-grow: 1;
+            .cardMedia {
+              &.MuiCardMedia-root {
+                width: 4rem;
+              }
+            }
+            .cardMedia.disabled {
+              &.MuiCardMedia-root {
+                width: 4rem;
+                filter: grayscale(100%);
+              }
+            }
+
+            .cardDrescription {
+              &.MuiBox-root {
+                overflow-y: auto;
+                height: 165px;
+
+                &::-webkit-scrollbar {
+                  width: 8px; /* Width of the scrollbar */
+                }
+
+                &::-webkit-scrollbar-thumb {
+                  background-color: #888; /* Color of the scrollbar thumb */
+                  border-radius: 4px; /* Rounded corners */
+                }
+
+                &::-webkit-scrollbar-track {
+                  background-color: rgb(
+                    238 233 218
+                  ); /* Color of the scrollbar track */
+                }
+              }
+            }
+          }
+        }
+        .btnCardLink {
+          &.MuiButton-root {
+            text-transform: none;
+            font-size: 10px;
+            // background-color: #6096b4;
+            border-radius: 10px;
+            width: 100px;
+          }
+        }
+      }
+    }
+
+    .imgBox-auth {
+      &.MuiBox-root {
+        width: 50%;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+      }
+    }
+    .imgBox {
+      &.MuiBox-root {
+        width: 50%;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &.MuiBox-root:hover {
+        transform: scale(1.2);
+        overflow: visible !important;
+      }
+    }
+    .imgDetails {
+      &.MuiCardMedia-root {
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+  }
+}
+.cardLinks.disabled {
+  filter: grayscale(100%);
+}

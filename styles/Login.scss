@@ -1,0 +1,61 @@
+.loginBox {
+  &.MuiBox-root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  .cardLogin {
+    &.MuiCard-root {
+      background-color: #d6c7ae4f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 10px;
+      width: 400px;
+      height: 400px;
+      gap: 20px;
+      .typoLogin {
+        &.MuiTypography-root {
+          font-family: "GoldmanRegular";
+          letter-spacing: 2px;
+          font-size: 30px;
+        }
+      }
+
+      .loginText {
+        &.MuiFormControl-root {
+          height: 50px;
+          width: 300px;
+
+          .MuiInputBase-root {
+            border-radius: 10px;
+          }
+        }
+      }
+      .loginButton {
+        &.MuiButtonBase-root {
+          text-transform: capitalize;
+          width: 300px;
+          border-radius: 1rem;
+          font-family: "GoldManRegular";
+          font-weight: bolder;
+          font-size: 16px;
+        }
+      }
+    }
+    .misLogo {
+      width: 40px;
+    }
+    .misRights {
+      &.MuiTypography-root {
+        font-size: 10px;
+      }
+    }
+  }
+}

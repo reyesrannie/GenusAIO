@@ -1,0 +1,66 @@
+.archivePrompt {
+  &.MuiPaper-root {
+    overflow: hidden;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    .archiveIconPrompt {
+      width: 50px;
+    }
+    .archiveTitle {
+      &.MuiTypography-root {
+        font-family: "GoldManRegular";
+        font-size: 22px;
+        letter-spacing: 2px;
+      }
+    }
+    .archiveDescription {
+      &.MuiTypography-root {
+        margin-top: 20px;
+        font-family: "GoldManRegular";
+        font-size: 18px;
+      }
+    }
+    .archiveBoxDetails {
+      &.MuiBox-root {
+        margin-bottom: 25px;
+        width: 350px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid rgba(73, 73, 73, 0.26);
+        .archiveLogo {
+          width: 40px;
+        }
+        .archiveItem {
+          &.MuiTypography-root {
+            font-family: "GoldManRegular";
+            font-size: 18px;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+    .actionArchiveBox {
+      &.MuiBox-root {
+        display: flex;
+        justify-content: flex-end;
+        width: 350px;
+        gap: 15px;
+
+        .archiveButton {
+          &.MuiButtonBase-root {
+            font-family: "GoldManRegular";
+          }
+        }
+      }
+    }
+  }
+}
