@@ -9,7 +9,7 @@
       align-items: center;
       width: 70px;
       transition: width 0.2s ease;
-
+      overflow: hidden;
       .menuList {
         &.MuiList-root {
           width: 100%;
